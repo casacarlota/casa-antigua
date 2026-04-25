@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alojamiento en Conil | Casa Antigua</title>
-  <meta
-    name="description"
-    content="Casa antigua con encanto en el centro de Conil. Alojamiento vacacional con contacto directo para consultar disponibilidad."
-  />
+  <title>Casa Carlota | Alojamiento con encanto en Conil</title>
+  <meta name="description" content="Casa Carlota, alojamiento con encanto en el corazón de Conil de la Frontera. Casa típica andaluza con terraza privada, cerca de la playa y contacto directo por WhatsApp." />
   <style>
     :root {
-      --bg: #f8f5f1;
-      --text: #2f2a26;
-      --muted: #6f655d;
-      --card: #ffffff;
-      --line: #e7ddd2;
-      --accent: #8a5a3c;
-      --accent-dark: #6f442b;
+      --navy: #1f355e;
+      --gold: #b48a52;
+      --sand: #f6f2eb;
+      --cream: #fffaf3;
+      --text: #1f2b3d;
+      --muted: #6f6a63;
+      --line: rgba(31,53,94,0.14);
+      --shadow: 0 18px 45px rgba(31, 53, 94, 0.12);
     }
 
     * { box-sizing: border-box; }
@@ -26,375 +24,532 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
       color: var(--text);
+      background: var(--cream);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1100px, calc(100% - 32px));
+      width: min(1180px, calc(100% - 36px));
       margin: 0 auto;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(248,245,241,0.94);
+      z-index: 20;
+      background: rgba(255,250,243,0.95);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 24px;
       padding: 16px 0;
-      gap: 16px;
     }
 
-    .brand {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
+    .logo {
+      color: var(--navy);
+      line-height: 1;
     }
 
-    .brand small {
+    .moon {
       display: block;
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-top: 2px;
+      margin: 0 auto 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      box-shadow: -6px 0 0 0 var(--navy);
+      transform: translateX(5px);
+    }
+
+    .logo-main {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: -0.04em;
+    }
+
+    .wave {
+      width: 160px;
+      height: 18px;
+      margin-top: 4px;
+    }
+
+    .wave path {
+      stroke: var(--gold);
+      stroke-width: 4;
+      fill: none;
+      stroke-linecap: round;
     }
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 22px;
-      padding: 0;
+      list-style: none;
+      gap: 34px;
       margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+      padding: 0;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 20px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .hero {
-      padding: 72px 0 44px;
+      min-height: 690px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-image:
+        linear-gradient(90deg, rgba(18,29,49,0.82) 0%, rgba(18,29,49,0.55) 38%, rgba(18,29,49,0.15) 72%),
+        linear-gradient(0deg, rgba(18,29,49,0.22), rgba(18,29,49,0.02)),
+        url("assets/hero-conil-atardecer.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      overflow: hidden;
     }
 
-    .hero-grid {
+    .hero-content {
+      max-width: 650px;
+      padding: 110px 0 160px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(3.2rem, 8vw, 6.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin: 0 0 22px;
+      font-weight: 500;
+    }
+
+    .hero .kicker {
+      color: rgba(255,255,255,0.94);
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      font-size: clamp(1rem, 2vw, 1.45rem);
+      max-width: 620px;
+      margin-bottom: 20px;
+    }
+
+    .caption {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--gold);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      margin: 10px 0 10px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 610px;
+      color: rgba(255,255,255,0.92);
+      margin: 0 0 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: white;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.72);
+      color: white;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+    }
+
+    .quickfacts {
+      position: relative;
+      z-index: 5;
+      margin-top: -60px;
+    }
+
+    .facts-card {
+      background: rgba(255,250,243,0.96);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+
+    .fact {
+      text-align: center;
+      padding: 24px 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .fact:last-child { border-right: 0; }
+
+    .fact .icon {
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .fact strong {
+      display: block;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 3px;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 54px;
       align-items: center;
     }
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      font-size: 0.78rem;
-      margin-bottom: 12px;
+    .section-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.3rem, 4.5vw, 4rem);
+      line-height: 1.05;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+      margin: 0 0 18px;
     }
 
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4.3rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-      margin: 0;
+    .gold-line {
+      width: 72px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 0 24px;
     }
 
     .lead {
       font-size: 1.1rem;
       color: var(--muted);
-      max-width: 640px;
-      margin: 20px 0 0;
+      margin: 0 0 18px;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover { background: var(--accent-dark); }
-
-    .btn-secondary {
+    .image-card {
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
       border: 1px solid var(--line);
       background: white;
     }
 
-    .hero-image,
-    .gallery-item,
-    .map-box {
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #eadccf, #f7f1eb);
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--muted);
-      padding: 24px;
-    }
-
-    .hero-image {
-      min-height: 420px;
-      font-size: 1rem;
-    }
-
-    section {
-      padding: 32px 0 72px;
-    }
-
-    .section-title {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      letter-spacing: -0.03em;
-      margin: 0 0 10px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      margin: 0 0 28px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.12rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .gallery {
+      background: var(--sand);
+    }
+
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
+      margin-top: 34px;
     }
 
-    .gallery-item {
-      min-height: 240px;
-      background: linear-gradient(135deg, #efe3d6, #fcf8f4);
+    .gallery-grid img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(31,53,94,0.09);
     }
 
-    .location-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
+    .location {
+      background: white;
     }
 
-    .map-box {
-      min-height: 320px;
-    }
-
-    .contact-box {
-      background: #2f2a26;
+    .contact {
+      background: var(--navy);
       color: white;
-      border-radius: 24px;
-      padding: 32px;
+      padding: 78px 0;
     }
 
-    .contact-box p,
-    .contact-box li {
-      color: rgba(255,255,255,0.82);
+    .contact .section-title { color: white; }
+
+    .contact .lead { color: rgba(255,255,255,0.78); }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 22px;
+      padding: 30px;
     }
 
     .contact-list {
       list-style: none;
       padding: 0;
-      margin: 20px 0 0;
+      margin: 24px 0 0;
       display: grid;
       gap: 14px;
     }
 
+    .contact-list li {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
+    }
+
     .contact-list strong {
       display: block;
-      color: white;
+      color: var(--gold);
       margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-size: 0.78rem;
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 24px 0 40px;
-      color: var(--muted);
+      background: #172846;
+      color: rgba(255,255,255,0.7);
+      padding: 26px 0;
       font-size: 0.92rem;
     }
 
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     @media (max-width: 900px) {
-      .hero-grid,
-      .features,
-      .gallery,
-      .location-grid,
-      .contact-grid {
+      nav ul { display: none; }
+
+      .nav-button { display: none; }
+
+      .hero {
+        min-height: 620px;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 80px 0 130px;
+      }
+
+      .facts-card,
+      .section-grid,
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      nav ul {
-        display: none;
+      .fact {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
       }
 
-      .hero {
-        padding-top: 44px;
-      }
+      .fact:last-child { border-bottom: 0; }
+
+      .gallery-grid img { height: 260px; }
+
+      section { padding: 62px 0; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">
-        Casa Antigua
-        <small>Alojamiento en el centro de Conil</small>
-      </div>
-      <nav>
+      <a href="#inicio" class="logo" aria-label="Casa Carlota">
+        <span class="moon"></span>
+        <span class="logo-main">Casa Carlota</span>
+        <svg class="wave" viewBox="0 0 300 40" aria-hidden="true">
+          <path d="M15 25 C75 45, 95 2, 150 22 C190 36, 220 28, 285 16" />
+        </svg>
+      </a>
+
+      <nav aria-label="Navegación principal">
         <ul>
+          <li><a class="active" href="#inicio">Inicio</a></li>
           <li><a href="#casa">La casa</a></li>
-          <li><a href="#fotos">Fotos</a></li>
+          <li><a href="#galeria">Galería</a></li>
           <li><a href="#ubicacion">Ubicación</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
+
+      <a class="nav-button" href="https://wa.me/34000000000" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
 
-  <main>
+  <main id="inicio">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Conil de la Frontera · Andalucía</div>
-          <h1>Alojamiento con encanto en el centro de Conil</h1>
-          <p class="lead">
-            Casa antigua andaluza ideal para vacaciones cerca del mar. Una opción auténtica y tranquila con contacto directo para consultar disponibilidad.
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#contacto">Consultar disponibilidad</a>
-            <a class="btn btn-secondary" href="#fotos">Ver fotos</a>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Casa Carlota</h1>
+          <div class="kicker">Alojamiento con encanto en el corazón de Conil</div>
+          <div class="caption">Conil al caer la tarde.</div>
+          <p>Casa típica andaluza, cuidada con cariño, a pocos minutos a pie de la playa y del ambiente del centro.</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="https://wa.me/34000000000" target="_blank" rel="noopener">Consultar disponibilidad</a>
+            <a class="btn btn-outline" href="#casa">Ver la casa</a>
           </div>
-        </div>
-        <div class="hero-image">
-          Foto principal de la casa<br>
-          Fachada · terraza · salón · patio
         </div>
       </div>
     </section>
+
+    <div class="container quickfacts">
+      <div class="facts-card">
+        <div class="fact">
+          <div class="icon">▣</div>
+          <strong>Casa completa</strong>
+          <span>Ideal para vacaciones</span>
+        </div>
+        <div class="fact">
+          <div class="icon">☼</div>
+          <strong>Terraza privada</strong>
+          <span>Relájate al aire libre</span>
+        </div>
+        <div class="fact">
+          <div class="icon">≈</div>
+          <strong>Cerca de la playa</strong>
+          <span>A pocos minutos andando</span>
+        </div>
+        <div class="fact">
+          <div class="icon">⌖</div>
+          <strong>Centro de Conil</strong>
+          <span>Ubicación ideal</span>
+        </div>
+      </div>
+    </div>
 
     <section id="casa">
-      <div class="container">
-        <h2 class="section-title">La casa</h2>
-        <p class="section-intro">
-          Una casa andaluza con personalidad, situada en el corazón de Conil. Pensada para huéspedes que valoran el ambiente local, el carácter del lugar y la cercanía a la playa.
-        </p>
-        <div class="features">
-          <div class="card">
-            <h3>Encanto andaluz</h3>
-            <p>Una estancia con estilo auténtico y ambiente acogedor.</p>
-          </div>
-          <div class="card">
-            <h3>Ubicación céntrica</h3>
-            <p>En el centro de Conil, cerca de restaurantes, calles bonitas y comercios.</p>
-          </div>
-          <div class="card">
-            <h3>Contacto directo</h3>
-            <p>Consulta disponibilidad sin intermediarios, de forma clara y personal.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="fotos">
-      <div class="container">
-        <h2 class="section-title">Fotos</h2>
-        <p class="section-intro">
-          Sustituye estos espacios por tus imágenes reales. Para esta web bastan 5 o 6 fotos buenas del interior y exterior.
-        </p>
-        <div class="gallery">
-          <div class="gallery-item">Salón / zona de estar</div>
-          <div class="gallery-item">Dormitorio</div>
-          <div class="gallery-item">Patio o terraza</div>
-          <div class="gallery-item">Cocina</div>
-          <div class="gallery-item">Detalle con ambiente</div>
-          <div class="gallery-item">Entrada o fachada</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ubicacion">
-      <div class="container location-grid">
+      <div class="container section-grid">
         <div>
-          <h2 class="section-title">Ubicación</h2>
-          <p class="section-intro">
-            La casa se encuentra en el centro de Conil, con acceso cómodo a la playa y al ambiente del casco urbano.
-          </p>
-          <div class="card">
-            <h3>Ideal para vacaciones en Conil</h3>
-            <p>
-              Puedes añadir aquí una frase más concreta sobre la distancia a la playa, al centro histórico o a los servicios cercanos.
-            </p>
-          </div>
+          <h2 class="section-title">Una casa con alma andaluza</h2>
+          <div class="gold-line"></div>
+          <p class="lead">Casa Carlota es una casa típica andaluza, renovada con cuidado para ofrecer comodidad sin perder su esencia.</p>
+          <p class="lead">Luz, calma, detalles sencillos y una terraza privada que invita a quedarse después de un día de playa o paseo por Conil.</p>
         </div>
-        <div class="map-box">
-          Imagen de ubicación<br>
-          o mapa de la zona
+        <div class="image-card">
+          <img src="assets/terraza-casa-carlota.jpg" alt="Terraza privada de Casa Carlota con luces cálidas por la noche" />
         </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <div class="container contact-grid">
+    <section id="galeria" class="gallery">
+      <div class="container">
+        <h2 class="section-title">Ambiente, terraza y mar</h2>
+        <div class="gold-line"></div>
+        <p class="lead">Un pequeño recorrido visual por la atmósfera de Casa Carlota y el entorno de Conil.</p>
+
+        <div class="gallery-grid">
+          <img src="assets/terraza-casa-carlota.jpg" alt="Zona de descanso en la terraza de Casa Carlota" />
+          <img src="assets/terraza-noche-casa-carlota.jpg" alt="Terraza privada iluminada por la noche" />
+          <img src="assets/playa-conil.jpg" alt="Playa de Conil al atardecer" />
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicacion" class="location">
+      <div class="container section-grid">
+        <div class="image-card">
+          <img src="assets/atardecer-playa-conil.jpg" alt="Atardecer junto al mar en Conil de la Frontera" />
+        </div>
         <div>
-          <h2 class="section-title">Contacto</h2>
-          <p class="section-intro">
-            Para consultar disponibilidad, envía un mensaje con las fechas deseadas y el número de personas.
-          </p>
-          <div class="card">
-            <h3>Información recomendada en la consulta</h3>
-            <p>Fechas del viaje, número de huéspedes y forma de contacto.</p>
+          <h2 class="section-title">En el corazón de Conil</h2>
+          <div class="gold-line"></div>
+          <p class="lead">La casa se encuentra en el centro de Conil de la Frontera, con acceso cómodo a restaurantes, tiendas, calles con encanto y la playa.</p>
+          <p class="lead">Perfecta para quienes quieren vivir Conil a pie, disfrutar del mar y volver a una casa tranquila con carácter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container section-grid">
+        <div>
+          <h2 class="section-title">Consulta disponibilidad</h2>
+          <div class="gold-line"></div>
+          <p class="lead">Para solicitar información, envía las fechas deseadas, número de personas y una forma de contacto.</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="https://wa.me/34000000000" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+            <a class="btn btn-outline" href="mailto:tuemail@ejemplo.com">Escribir email</a>
           </div>
         </div>
-        <div class="contact-box">
-          <h2 style="margin-top:0; font-size:1.8rem;">Consultar disponibilidad</h2>
+        <div class="contact-card">
+          <h3 style="margin-top:0;">Datos de contacto</h3>
           <ul class="contact-list">
             <li>
               <strong>Email</strong>
-              tuemail@ejemplo.com
+              <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
             </li>
             <li>
-              <strong>Teléfono / WhatsApp</strong>
-              +34 XXX XXX XXX
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/34000000000" target="_blank" rel="noopener">+34 000 000 000</a>
+            </li>
+            <li>
+              <strong>Ubicación</strong>
+              Centro de Conil de la Frontera
             </li>
           </ul>
         </div>
@@ -403,8 +558,9 @@
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 Casa Antigua · Conil de la Frontera
+    <div class="container footer-inner">
+      <div>© 2026 Casa Carlota · Conil de la Frontera</div>
+      <div>Alojamiento con contacto directo</div>
     </div>
   </footer>
 </body>
