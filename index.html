@@ -334,7 +334,159 @@
       section { padding: 64px 0; }
       .contact-links { flex-direction: column; align-items: center; }
     }
-  </style>
+  
+    /* Merge 01: Interior Slider only */
+    .interior-slider-section {
+      padding-top: clamp(82px, 9vw, 122px);
+      padding-bottom: clamp(82px, 9vw, 122px);
+      background: var(--paper, #f4eee5);
+    }
+
+    .interior-slider-section h2 {
+      text-align: center;
+    }
+
+    .interior-slider-section .section-kicker {
+      text-align: center;
+    }
+
+    .interior-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #e7ded2;
+      min-height: 640px;
+      box-shadow: 0 18px 60px rgba(34, 47, 62, .08);
+      margin-top: 42px;
+    }
+
+    .interior-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      margin: 0;
+      transition: opacity 1500ms ease;
+      pointer-events: none;
+      background: #e7ded2;
+    }
+
+    .interior-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .interior-slide img {
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .interior-slide.hero-slide.active img {
+      animation: subtleInteriorZoom 8s ease-out both;
+    }
+
+    .interior-slide.night-slide {
+      background: #101010;
+    }
+
+    .interior-slide.night-slide img {
+      object-fit: contain;
+      object-position: center center;
+      background: #101010;
+    }
+
+    @keyframes subtleInteriorZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.018); }
+    }
+
+    .interior-slide figcaption {
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(24, 34, 46, .34);
+      backdrop-filter: blur(8px);
+      font-size: .82rem;
+      letter-spacing: .02em;
+    }
+
+    .interior-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 999px;
+      background: rgba(255,255,255,.28);
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .interior-arrow.prev { left: 22px; }
+    .interior-arrow.next { right: 22px; }
+
+    .interior-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .interior-dot {
+      width: 7px;
+      height: 7px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0;
+      cursor: pointer;
+      background: rgba(183,157,120,.42);
+      transition: background .2s ease, width .2s ease;
+    }
+
+    .interior-dot.active {
+      width: 22px;
+      background: rgba(183,157,120,.96);
+    }
+
+    .interior-copy {
+      max-width: 720px;
+      margin: 42px auto 0;
+      color: var(--muted, #746c62);
+      font-size: 1.02rem;
+      text-align: center;
+      line-height: 1.78;
+    }
+
+    @media (max-width: 900px) {
+      .interior-carousel,
+      .interior-slide img {
+        min-height: 430px;
+      }
+      .interior-arrow {
+        display: none;
+      }
+      .interior-slide figcaption {
+        left: 16px;
+        bottom: 16px;
+      }
+    }
+
+</style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -362,6 +514,158 @@ h2,
 font-size:clamp(1.65rem,2.7vw,2.35rem)!important;
 line-height:1.14!important;
 }
+
+    /* Merge 01: Interior Slider only */
+    .interior-slider-section {
+      padding-top: clamp(82px, 9vw, 122px);
+      padding-bottom: clamp(82px, 9vw, 122px);
+      background: var(--paper, #f4eee5);
+    }
+
+    .interior-slider-section h2 {
+      text-align: center;
+    }
+
+    .interior-slider-section .section-kicker {
+      text-align: center;
+    }
+
+    .interior-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #e7ded2;
+      min-height: 640px;
+      box-shadow: 0 18px 60px rgba(34, 47, 62, .08);
+      margin-top: 42px;
+    }
+
+    .interior-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      margin: 0;
+      transition: opacity 1500ms ease;
+      pointer-events: none;
+      background: #e7ded2;
+    }
+
+    .interior-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .interior-slide img {
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .interior-slide.hero-slide.active img {
+      animation: subtleInteriorZoom 8s ease-out both;
+    }
+
+    .interior-slide.night-slide {
+      background: #101010;
+    }
+
+    .interior-slide.night-slide img {
+      object-fit: contain;
+      object-position: center center;
+      background: #101010;
+    }
+
+    @keyframes subtleInteriorZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.018); }
+    }
+
+    .interior-slide figcaption {
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(24, 34, 46, .34);
+      backdrop-filter: blur(8px);
+      font-size: .82rem;
+      letter-spacing: .02em;
+    }
+
+    .interior-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.62);
+      border-radius: 999px;
+      background: rgba(255,255,255,.28);
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .interior-arrow.prev { left: 22px; }
+    .interior-arrow.next { right: 22px; }
+
+    .interior-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .interior-dot {
+      width: 7px;
+      height: 7px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0;
+      cursor: pointer;
+      background: rgba(183,157,120,.42);
+      transition: background .2s ease, width .2s ease;
+    }
+
+    .interior-dot.active {
+      width: 22px;
+      background: rgba(183,157,120,.96);
+    }
+
+    .interior-copy {
+      max-width: 720px;
+      margin: 42px auto 0;
+      color: var(--muted, #746c62);
+      font-size: 1.02rem;
+      text-align: center;
+      line-height: 1.78;
+    }
+
+    @media (max-width: 900px) {
+      .interior-carousel,
+      .interior-slide img {
+        min-height: 430px;
+      }
+      .interior-arrow {
+        display: none;
+      }
+      .interior-slide figcaption {
+        left: 16px;
+        bottom: 16px;
+      }
+    }
+
 </style>
 
 </head>
@@ -430,6 +734,86 @@ line-height:1.14!important;
         </div>
       </div>
     </section>
+
+    <section id="interior-slider" class="interior-slider-section">
+      <div class="container">
+        <p class="section-kicker">Luz · Materia · Calma</p>
+        <h2>Interior de Casa Carlota</h2>
+
+        <div class="interior-carousel" data-interior-carousel aria-label="Interior de Casa Carlota">
+                    <figure class="interior-slide hero-slide active" data-hold="8000">
+            <img src="assets/interior/01-salon-cafe.png" alt="Salón con café · Casa Carlota Conil" loading="eager">
+            <figcaption>Salón con café</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/02-azotea-dia.jpg" alt="Azotea privada · Casa Carlota Conil" loading="lazy">
+            <figcaption>Azotea privada</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/03-terraza-vino-olivas.png" alt="Terraza al atardecer · Casa Carlota Conil" loading="lazy">
+            <figcaption>Terraza al atardecer</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/04-plantas-terracota.jpeg" alt="Terracota y plantas · Casa Carlota Conil" loading="lazy">
+            <figcaption>Terracota y plantas</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/05-patio-plantas.jpeg" alt="Patio con plantas · Casa Carlota Conil" loading="lazy">
+            <figcaption>Patio con plantas</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/06-cocina.jpeg" alt="Cocina abierta · Casa Carlota Conil" loading="lazy">
+            <figcaption>Cocina abierta</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/07-dormitorio-principal.png" alt="Dormitorio principal · Casa Carlota Conil" loading="lazy">
+            <figcaption>Dormitorio principal</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/08-bano.jpeg" alt="Baño renovado · Casa Carlota Conil" loading="lazy">
+            <figcaption>Baño renovado</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/09-escalera.jpeg" alt="Escalera interior · Casa Carlota Conil" loading="lazy">
+            <figcaption>Escalera interior</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/10-dormitorio-litera.png" alt="Segundo dormitorio · Casa Carlota Conil" loading="lazy">
+            <figcaption>Segundo dormitorio</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/11-detalle-mar.jpeg" alt="Detalles junto al mar · Casa Carlota Conil" loading="lazy">
+            <figcaption>Detalles junto al mar</figcaption>
+          </figure>
+          <figure class="interior-slide night-slide">
+            <img src="assets/interior/12-night-agave.jpeg" alt="Noches en Casa Carlota · Casa Carlota Conil" loading="lazy">
+            <figcaption>Noches en Casa Carlota</figcaption>
+          </figure>
+          <button class="interior-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
+          <button class="interior-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+        </div>
+
+        <div class="interior-dots" aria-label="Seleccionar imagen">
+                    <button class="interior-dot active" type="button" aria-label="Ver imagen 1" data-slide="0"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 2" data-slide="1"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 3" data-slide="2"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 4" data-slide="3"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 5" data-slide="4"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 6" data-slide="5"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 7" data-slide="6"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 8" data-slide="7"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 9" data-slide="8"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 10" data-slide="9"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 11" data-slide="10"></button>
+          <button class="interior-dot" type="button" aria-label="Ver imagen 12" data-slide="11"></button>
+        </div>
+
+        <div class="interior-copy">
+          <p>Entre luz, materiales naturales y calma mediterránea, Casa Carlota propone una forma serena de habitar Conil. Un refugio con carácter, pensado para vivir despacio.</p>
+        </div>
+      </div>
+    </section>
+
 
     <section class="quiet-band">
       <div class="container">
@@ -528,5 +912,105 @@ line-height:1.14!important;
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
+
+  <script id="interior-slider-js">
+    (function () {
+      const carousel = document.querySelector("[data-interior-carousel]");
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll(".interior-slide"));
+      const dotsWrap = carousel.nextElementSibling;
+      const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll(".interior-dot")) : [];
+      const prev = carousel.querySelector(".prev");
+      const next = carousel.querySelector(".next");
+
+      let index = 0;
+      let timer = null;
+      let hasStarted = false;
+      const defaultHold = 6000;
+
+      function holdForCurrentSlide() {
+        const hold = slides[index] && slides[index].dataset.hold;
+        return hold ? Number(hold) : defaultHold;
+      }
+
+      function show(nextIndex) {
+        index = (nextIndex + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+          if (i === index && slide.classList.contains("hero-slide")) {
+            slide.querySelector("img").style.animation = "none";
+            void slide.querySelector("img").offsetWidth;
+            slide.querySelector("img").style.animation = "";
+          }
+        });
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+      }
+
+      function stop() {
+        if (timer) window.clearTimeout(timer);
+        timer = null;
+      }
+
+      function start() {
+        stop();
+        timer = window.setTimeout(function tick() {
+          show(index + 1);
+          timer = window.setTimeout(tick, holdForCurrentSlide());
+        }, holdForCurrentSlide());
+      }
+
+      function startFromFirstOnce() {
+        if (hasStarted) {
+          start();
+          return;
+        }
+        hasStarted = true;
+        show(0);
+        stop();
+        timer = window.setTimeout(start, 1200);
+      }
+
+      if (prev) prev.addEventListener("click", () => { show(index - 1); start(); });
+      if (next) next.addEventListener("click", () => { show(index + 1); start(); });
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          show(Number(dot.dataset.slide));
+          start();
+        });
+      });
+
+      let touchStartX = 0;
+      carousel.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", (event) => {
+        const delta = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(delta) > 42) {
+          show(index + (delta < 0 ? 1 : -1));
+          start();
+        }
+      }, { passive: true });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
+            startFromFirstOnce();
+          } else {
+            stop();
+          }
+        });
+      }, { threshold: [0, .35, .6] });
+
+      observer.observe(carousel);
+
+      carousel.addEventListener("mouseenter", stop);
+      carousel.addEventListener("mouseleave", () => {
+        if (hasStarted) start();
+      });
+    })();
+  </script>
+
 </body>
 </html>
