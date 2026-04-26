@@ -3,708 +3,530 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Casa Carlota | Casa andaluza de vacaciones en Conil</title>
-  <meta name="description" content="Casa vacacional en Conil de la Frontera, cerca de la playa y del casco antiguo. Casa andaluza con terraza privada, patio tranquilo y azotea." />
-
+  <meta name="description" content="Casa vacacional en Conil de la Frontera con terraza privada, cerca de la playa y del centro histórico. Una casa antigua andaluza con alma para disfrutar Conil despacio." />
+  <meta name="keywords" content="casa vacacional Conil, alquiler vacacional Conil, casa andaluza Conil, alojamiento cerca de la playa Conil, casa con terraza privada Conil" />
+  <meta property="og:title" content="Casa Carlota | Casa andaluza de vacaciones en Conil" />
+  <meta property="og:description" content="Una casa andaluza con alma en Conil. Terraza privada, calma y vida andaluza cerca de la playa." />
+  <meta property="og:image" content="assets/hero-conil.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#173452" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ivory: #faf7f1;
-      --paper: #f4eee5;
-      --sand: #d7c6aa;
-      --sand-dark: #b79d78;
-      --navy: #304764;
-      --text: #544e47;
-      --muted: #746c62;
-      --line: rgba(183,157,120,.26);
+      --paper: #f6f1ea;
+      --paper-soft: #fbf8f3;
+      --navy: #244767;
+      --ink: #34302b;
+      --muted: #746b61;
+      --sand: #b99e72;
+      --sand-soft: #e7dccc;
+      --line: rgba(38, 52, 64, 0.13);
+      --white: #fffaf3;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--ivory);
-      color: var(--text);
-      line-height: 1.72;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-
+    img { width: 100%; display: block; height: auto; }
     a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1120px, calc(100% - 44px));
-      margin: 0 auto;
-    }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
     .site-header {
-      position: absolute;
-      top: 34px;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 70px;
-      color: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 241, 234, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
-
-    .brand {
-      font-size: clamp(1.95rem, 3vw, 2.85rem);
-      line-height: .9;
-      font-weight: 600;
-      letter-spacing: .01em;
-      position: relative;
-      padding-right: 30px;
-      white-space: nowrap;
-    }
-
-    .brand .moon {
-      position: absolute;
-      right: 0px;
-      top: -14px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--navy);
-    }
-
-    .brand .moon:after {
-      content: "";
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: rgba(250,247,241,.96);
-      left: 8px;
-      top: -1px;
-    }
-
-    .nav {
+    .nav-wrap {
+      height: 86px;
       display: flex;
       align-items: center;
-      gap: 22px;
-      padding-top: 5px;
-      font-size: .94rem;
-      letter-spacing: .02em;
+      gap: 54px;
     }
-
-    .nav a { opacity: .88; }
-    .nav a:hover { opacity: 1; }
+    .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: var(--navy);
+      font-size: clamp(1.95rem, 3.0vw, 2.85rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      position: relative;
+      padding-right: 30px;
+      font-weight: 600;
+      text-shadow: 0 0 .01px currentColor;
+    }
+    .brand .moon {
+      position: absolute;
+      top: -18px;
+      right: -2px;
+      width: 26px;
+      height: 26px;
+      display: inline-block;
+      background: var(--navy);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+      font-size: 0;
+    }
+    .brand .moon::after {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--paper);
+      left: 10px;
+      top: -2px;
+    }
+    .main-nav {
+      display: flex;
+      gap: clamp(22px, 4vw, 58px);
+      align-items: center;
+      margin-left: auto;
+      font-size: .81rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .main-nav a { opacity: .86; position: relative; padding: 8px 0; }
+    .main-nav a:hover { opacity: 1; }
+    .main-nav a:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 36px;
+      height: 2px;
+      background: var(--sand);
+    }
 
     .hero {
-      min-height: 92vh;
+      min-height: calc(100vh - 86px);
       position: relative;
-      background:
-        linear-gradient(rgba(250,247,241,.12), rgba(250,247,241,.12)),
-        url("assets/hero/hero-conil.jpeg") center / cover no-repeat;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background: #d9c2a3;
     }
-
-    .hero-claim {
+    .hero img {
       position: absolute;
-      top: 27vh;
-      left: 10vw;
-      color: var(--navy);
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(246,241,234,.64) 0%, rgba(246,241,234,.30) 34%, rgba(246,241,234,.04) 72%);
+      z-index: 1;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      margin-top: -12vh;
+      max-width: 430px;
+      margin-left: clamp(20px, 5vw, 78px);
+    }
+    h1 {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: #2f5677;
       font-size: clamp(1.15rem, 1.9vw, 1.82rem);
-      font-weight: 500;
-      letter-spacing: .01em;
-      white-space: nowrap;
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+      font-weight: 600;
     }
 
     .icon-strip {
-      background: var(--ivory);
+      background: var(--paper-soft);
       border-bottom: 1px solid var(--line);
-      padding: 34px 0;
     }
-
     .icons {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      align-items: start;
-      text-align: center;
+      gap: 0;
+      padding: 34px 0 30px;
     }
-
-    .icon svg {
-      width: 32px;
-      height: 32px;
-      stroke: var(--sand-dark);
+    .icon-item {
+      text-align: center;
+      padding: 0 24px;
+      border-right: 1px solid var(--sand-soft);
+      color: var(--navy);
+    }
+    .icon-item:last-child { border-right: 0; }
+    .icon-item svg {
+      width: 50px;
+      height: 50px;
+      stroke: var(--sand);
       fill: none;
-      stroke-width: 1.35;
+      stroke-width: 1.65;
       stroke-linecap: round;
       stroke-linejoin: round;
-      margin-bottom: 9px;
+      margin-bottom: 14px;
     }
-
-    .icon strong {
-      display: block;
+    .icon-item h3 {
+      margin: 0 0 4px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1.05;
       color: var(--navy);
-      font-size: .96rem;
       font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .icon span {
-      display: block;
-      color: var(--muted);
-      font-size: .87rem;
-    }
-
-    section {
-      padding: clamp(82px, 9vw, 122px) 0;
-    }
-
-    .section-kicker {
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: .74rem;
-      color: var(--sand-dark);
-      margin: 0 0 18px;
-      font-weight: 700;
-    }
-
-    h2 {
-      color: var(--navy);
-      font-size: clamp(1.7rem, 3.1vw, 2.45rem);
-      line-height: 1.15;
-      font-weight: 500;
       letter-spacing: -.025em;
-      margin: 0 0 28px;
+    }
+    .icon-item p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+    section { padding: clamp(74px, 9vw, 126px) 0; }
+    .section-kicker {
+      margin: 0 0 14px;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      font-weight: 700;
+      color: var(--sand);
+    }
+    h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 4.6vw, 4.55rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 600;
+    }
+    .lead {
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+      max-width: 580px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+      gap: clamp(46px, 7vw, 92px);
+      align-items: center;
+    }
+    .two-col.reverse { grid-template-columns: minmax(320px, .82fr) minmax(0, 1.18fr); }
+    .photo {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 42px rgba(23, 52, 82, .08);
+      background: var(--sand-soft);
+    }
+    .photo img { aspect-ratio: 1.28 / 1; object-fit: cover; }
+    .photo.tall img { aspect-ratio: .82 / 1; }
+    .photo.wide img { aspect-ratio: 1.75 / 1; }
+
+    .facts {
+      margin-top: 34px;
+      display: grid;
+      gap: 12px;
+      color: var(--ink);
+      font-size: .96rem;
+    }
+    .facts span { color: var(--muted); }
+
+
+    .triptych {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 54px;
+    }
+    .detail-card img {
+      aspect-ratio: 1 / 1.16;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 14px 36px rgba(23, 52, 82, .07);
+    }
+    .detail-card p {
+      margin: 14px 2px 0;
+      color: var(--muted);
+      font-size: .94rem;
     }
 
-    .la-casa .text-grid {
+    .quiet-band {
+      background: var(--paper-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .center-text { text-align: center; max-width: 790px; margin: 0 auto 46px; }
+    .center-text .lead { margin-left: auto; margin-right: auto; }
+
+    .image-grid {
       display: grid;
       grid-template-columns: 1.08fr .92fr;
-      gap: clamp(36px, 6vw, 92px);
-      max-width: 1040px;
-      font-size: 1.03rem;
+      gap: 24px;
+      align-items: stretch;
     }
-
-    .la-casa p { margin: 0 0 18px; }
-
-    .seo-small {
-      color: var(--muted);
-      font-size: .98rem;
-    }
-
-    .slider-section { background: var(--paper); }
-    .beach-section { background: var(--ivory); }
-
-    .section-head-center {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 44px;
-    }
-
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      background: #e7ded2;
-      min-height: 650px;
-      box-shadow: 0 18px 60px rgba(34, 47, 62, .08);
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      margin: 0;
-      opacity: 0;
-      transition: opacity 1100ms ease;
-      pointer-events: none;
-    }
-
-    .slide.active {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 1;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      min-height: 650px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .slide figcaption {
-      position: absolute;
-      left: 28px;
-      bottom: 24px;
-      z-index: 2;
-      padding: 8px 13px;
-      border-radius: 999px;
-      color: #fff;
-      background: rgba(24, 34, 46, .34);
-      backdrop-filter: blur(8px);
-      font-size: .82rem;
-      letter-spacing: .02em;
-    }
-
-    .micro-caption {
-      position: absolute;
-      left: 50%;
-      bottom: 42px;
-      transform: translateX(-50%);
-      color: #fff;
-      background: rgba(24, 34, 46, .28);
-      padding: 10px 16px;
-      border-radius: 999px;
-      backdrop-filter: blur(8px);
-      z-index: 3;
-      font-size: .9rem;
-    }
-
-    .carousel-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255,255,255,.62);
-      border-radius: 999px;
-      background: rgba(255,255,255,.28);
-      color: #fff;
-      font-size: 2rem;
-      line-height: 1;
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-    }
-
-    .carousel-arrow.prev { left: 22px; }
-    .carousel-arrow.next { right: 22px; }
-
-    .dots {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 9px;
-      margin-top: 22px;
-      flex-wrap: wrap;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border: 0;
-      border-radius: 999px;
-      padding: 0;
-      cursor: pointer;
-      background: rgba(183,157,120,.42);
-      transition: background .2s ease, width .2s ease;
-    }
-
-    .dot.active {
-      width: 22px;
-      background: rgba(183,157,120,.96);
-    }
-
-    .copy-block {
-      max-width: 760px;
-      margin: 44px auto 0;
-      color: var(--muted);
-      font-size: 1.02rem;
-      text-align: left;
-    }
-
-    .copy-block p { margin: 0 0 16px; }
+    .image-grid .photo img { height: 100%; }
 
     .reservas {
       text-align: center;
-      background: var(--paper);
+      padding-bottom: 86px;
     }
-
-    .whatsapp {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 14px 26px;
-      border-radius: 999px;
-      background: var(--navy);
-      color: white;
-      font-weight: 600;
-      letter-spacing: .01em;
+    .reservas p { margin-left: auto; margin-right: auto; }
+    .contact-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
     }
-
-    .placeholder {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: .95rem;
+    .text-link {
+      color: var(--navy);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 6px;
     }
 
     footer {
-      padding: 42px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: .92rem;
       border-top: 1px solid var(--line);
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 920px) {
+      .nav-wrap { height: auto; padding: 20px 0 18px; align-items: flex-start; flex-direction: column; gap: 16px; }
+      .main-nav { margin-left: 0; width: 100%; overflow-x: auto; gap: 22px; padding-bottom: 2px; font-size: .74rem; }
+      .hero { min-height: 68vh; }
+      .hero-copy { margin-top: -3vh; }
+      .icons { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+      .icon-item:nth-child(2) { border-right: 0; }
+      .two-col, .two-col.reverse, .image-grid { grid-template-columns: 1fr; }
+      .triptych { grid-template-columns: 1fr; }
+      .photo.tall img, .detail-card img { aspect-ratio: 1.18 / 1; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
-    @media (max-width: 900px) {
-      .site-header {
-        top: 24px;
-        left: 24px;
-        right: 24px;
-        display: block;
-        text-align: left;
-      }
-
-      .brand {
-        font-size: 1.95rem;
-        display: inline-block;
-      }
-
-      .nav {
-        margin-top: 16px;
-        gap: 14px;
-        flex-wrap: wrap;
-        font-size: .86rem;
-      }
-
-      .hero-claim {
-        left: 24px;
-        top: 31vh;
-        font-size: 1.18rem;
-        max-width: calc(100% - 48px);
-        white-space: normal;
-      }
-
-      .icons { grid-template-columns: repeat(2, 1fr); }
-
-      .la-casa .text-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .carousel, .slide img { min-height: 430px; }
-
-      .carousel-arrow { display: none; }
-
-      .slide figcaption {
-        left: 16px;
-        bottom: 16px;
-      }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .brand { font-size: 1.95rem; }
+      .hero { min-height: 60vh; }
+      .hero::before { background: linear-gradient(90deg, rgba(246,241,234,.78), rgba(246,241,234,.2)); }
+      .icons { grid-template-columns: 1fr; padding: 30px 0; }
+      .icon-item { border-right: 0; border-bottom: 1px solid var(--sand-soft); padding: 24px 0; }
+      .icon-item:last-child { border-bottom: 0; }
+      section { padding: 64px 0; }
+      .contact-links { flex-direction: column; align-items: center; }
     }
   </style>
-</head>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Casa Carlota",
+    "description": "Casa andaluza de vacaciones en Conil de la Frontera, con terraza privada, cerca de la playa y del centro histórico.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Conil de la Frontera",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Terraza privada", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Cerca de la playa", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Cocina renovada", "value": true}
+    ]
+  }
+  </script>
 
+<style id="h2-refine-override">
+h2,
+.section-title,
+.section-heading{
+font-size:clamp(1.65rem,2.7vw,2.35rem)!important;
+line-height:1.14!important;
+}
+</style>
+
+</head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Casa Carlota">
-      Casa Carlota <span class="moon" aria-hidden="true"></span>
-    </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="#casa">La Casa</a>
-      <a href="#interior">Interior</a>
-      <a href="#playas">Dunas & Playas</a>
-      <a href="#reservas">Reservas</a>
-    </nav>
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" aria-label="Casa Carlota">Casa Carlota <span class="moon">☾</span></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#casa">La Casa</a>
+        <a href="#azotea">La Azotea</a>
+        <a href="#conil">Conil</a>
+        <a href="#reservas">Reservas</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-label="Casa Carlota Conil">
-      <div class="hero-claim">Una casa andaluza con alma en Conil</div>
+  <main id="inicio">
+    <section class="hero" aria-label="Casa Carlota en Conil">
+      <img src="assets/hero-conil.jpg" alt="Vista de Conil de la Frontera al atardecer frente al Atlántico" />
+      <div class="container hero-copy">
+        <h1>Una casa andaluza con alma en Conil</h1>
+      </div>
     </section>
 
-    <section class="icon-strip" aria-label="Resumen">
+    <aside class="icon-strip" aria-label="Información rápida de Casa Carlota">
       <div class="container icons">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/></svg>
-          <strong>Casa completa</strong><span>Para parejas y familias pequeñas</span>
+        <div class="icon-item reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 24.5 24 9l17 15.5"/><path d="M12.5 22v18h23V22"/><path d="M20.5 40V28h7v12"/></svg>
+          <h3>Casa completa</h3>
+          <p>Ideal para parejas o familias pequeñas</p>
         </div>
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
-          <strong>Terraza privada</strong><span>Azotea para días lentos</span>
+        <div class="icon-item reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M9.8 9.8l5 5M33.2 33.2l5 5M38.2 9.8l-5 5M14.8 33.2l-5 5"/></svg>
+          <h3>Terraza privada</h3>
+          <p>Un rincón abierto al cielo</p>
         </div>
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14c2.25-2 4.5-2 6.75 0s4.5 2 6.75 0 3.75-2 4.5-1"/><path d="M3 18c2.25-2 4.5-2 6.75 0s4.5 2 6.75 0 3.75-2 4.5-1"/></svg>
-          <strong>Cerca de la playa</strong><span>A 700 m del Atlántico</span>
+        <div class="icon-item reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 32c7.5 0 10.3-12.5 18.5-12.5 6.7 0 9.4 6.5 16.5 6.5-5.4 2.2-10.5 1.3-14.4-1.2-4.5-2.9-7.8 1.7-11.2 5.7C11.6 33.9 8.9 35 5 35"/><path d="M9 37c8.5 0 11-4 18.5-4 4.9 0 8.3 2.5 12.5 2.5"/></svg>
+          <h3>Cerca de la playa</h3>
+          <p>A 700 metros del Atlántico</p>
         </div>
-        <div class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.35 6-11a6 6 0 1 0-12 0c0 5.65 6 11 6 11Z"/><circle cx="12" cy="10" r="2.1"/></svg>
-          <strong>Centro histórico</strong><span>Todo a pocos minutos</span>
+        <div class="icon-item reveal">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 43s14-13.2 14-25A14 14 0 1 0 10 18c0 11.8 14 25 14 25Z"/><circle cx="24" cy="18" r="4.5"/></svg>
+          <h3>Centro histórico</h3>
+          <p>Tiendas y restaurantes a pocos minutos</p>
+        </div>
+      </div>
+    </aside>
+
+    <section id="casa">
+      <div class="container two-col">
+        <figure class="photo reveal">
+          <img src="assets/azotea-cafe.jpg" alt="Terraza privada de Casa Carlota con sillones, olivo y café sobre la mesa" />
+        </figure>
+        <div class="reveal">
+          <p class="section-kicker">La Casa</p>
+          <h2>Una casa andaluza restaurada para vivir Conil despacio</h2>
+          <p class="lead">En un patio tranquilo del casco histórico, Casa Carlota combina la sencillez de una casa antigua con una renovación cuidada y actual. Un lugar pensado para parejas o pequeñas familias, a pocos pasos del mar.</p>
+          <div class="facts" aria-label="Datos de la casa">
+            <div><strong>60 m²</strong> <span>distribuidos en dos plantas</span></div>
+            <div><strong>2 dormitorios</strong> <span>uno con cama doble y otro con litera</span></div>
+            <div><strong>Cocina y baño nuevos</strong> <span>confort actual en una casa antigua</span></div>
+            <div><strong>Patio tranquilo</strong> <span>con vecinos serenos y ambiente local</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="casa" class="la-casa">
+    <section class="quiet-band">
       <div class="container">
-        <p class="section-kicker">La Casa</p>
-        <h2>Una casa antigua, renovada con calma.</h2>
-        <div class="text-grid">
-          <div>
-            <p>Muros blancos, un patio silencioso, una casa de dos plantas donde lo tradicional y lo nuevo conviven con naturalidad.</p>
-            <p>En la planta baja, cocina abierta, salón y baño renovado. Arriba, dos dormitorios y una pequeña azotea privada para leer, cenar despacio o simplemente dejar pasar la tarde.</p>
-          </div>
-          <div>
-            <p>Restaurada con sensibilidad, combina el carácter de una casa histórica con el confort de hoy.</p>
-            <p class="seo-small">Casa vacacional en Conil de la Frontera, cerca de la playa y del casco antiguo, ideal para quienes buscan un alojamiento tranquilo con terraza privada en una casa andaluza con encanto.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="interior" class="slider-section">
-      <div class="container">
-        <div class="section-head-center">
+        <div class="center-text reveal">
           <p class="section-kicker">Luz · Materia · Calma</p>
-          <h2>Interior de Casa Carlota</h2>
+          <h2>Detalles que hacen casa</h2>
+          <p class="lead">Muros blancos, cerámica, sombra de olivo y pequeños gestos junto al mar. Una forma sencilla de estar en Conil.</p>
         </div>
-
-        <div class="carousel" data-carousel data-interval="5200" aria-label="Interior de Casa Carlota">
-          <figure class="slide active">
-            <img src="assets/interior/01-salon-cafe.png" alt="Salón y cocina abierta · Casa Carlota Conil" loading="eager">
-            <figcaption>Salón y cocina abierta</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/02-cocina.jpeg" alt="Cocina abierta · Casa Carlota Conil" loading="lazy">
-            <figcaption>Cocina abierta</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/03-dormitorio-principal.png" alt="Dormitorio principal · Casa Carlota Conil" loading="lazy">
-            <figcaption>Dormitorio principal</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/04-dormitorio-litera.png" alt="Segundo dormitorio · Casa Carlota Conil" loading="lazy">
-            <figcaption>Segundo dormitorio</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/05-bano.jpeg" alt="Baño renovado · Casa Carlota Conil" loading="lazy">
-            <figcaption>Baño renovado</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/06-ducha.jpeg" alt="Ducha · Casa Carlota Conil" loading="lazy">
-            <figcaption>Ducha</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/07-escalera.jpeg" alt="Escalera interior · Casa Carlota Conil" loading="lazy">
-            <figcaption>Escalera interior</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/08-luz-interior.jpeg" alt="Luz interior · Casa Carlota Conil" loading="lazy">
-            <figcaption>Luz interior</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/09-azotea-dia.jpg" alt="Azotea privada · Casa Carlota Conil" loading="lazy">
-            <figcaption>Azotea privada</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/10-detalle-mar.jpeg" alt="Detalles junto al mar · Casa Carlota Conil" loading="lazy">
-            <figcaption>Detalles junto al mar</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/11-patio-entrada.jpeg" alt="Patio de entrada · Casa Carlota Conil" loading="lazy">
-            <figcaption>Patio de entrada</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/interior/12-night-agave.jpeg" alt="Noches en Casa Carlota · Casa Carlota Conil" loading="lazy">
-            <figcaption>Noches en Casa Carlota</figcaption>
-            
-          </figure>
-          <button class="carousel-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
-          <button class="carousel-arrow next" type="button" aria-label="Imagen siguiente">›</button>
-        </div>
-        <div class="dots" aria-label="Seleccionar imagen">
-          <button class="dot active" type="button" aria-label="Ver imagen 1" data-slide="0"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 2" data-slide="1"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 3" data-slide="2"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 4" data-slide="3"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 5" data-slide="4"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 6" data-slide="5"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 7" data-slide="6"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 8" data-slide="7"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 9" data-slide="8"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 10" data-slide="9"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 11" data-slide="10"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 12" data-slide="11"></button>
-        </div>
-
-        <div class="copy-block">
-          <p>Zwischen Licht, natürlichen Materialien und mediterraner Ruhe erzählt Casa Carlota von einem Wohngefühl, das mehr ist als Unterkunft. Historische Substanz, reduziertes Design und andalusische Gelassenheit verbinden sich zu einem Ort mit Charakter.</p>
-          <p>Wer ein stilvolles Ferienhaus in Conil mit Authentizität, Ruhe und Nähe zum Meer sucht, findet hier einen Rückzugsort mit Seele.</p>
+        <div class="triptych">
+          <div class="detail-card reveal">
+            <img src="assets/sombra-olivo.jpg" alt="Sombra de olivo sobre un muro blanco de la terraza" />
+            <p>Sombras de mediodía.</p>
+          </div>
+          <div class="detail-card reveal">
+            <img src="assets/detalle-mar.jpg" alt="Detalle de conchas y una fotografía de vela en Casa Carlota" />
+            <p>Pequeños recuerdos del mar.</p>
+          </div>
+          <div class="detail-card reveal">
+            <img src="assets/cocina.jpg" alt="Cocina renovada de Casa Carlota con azulejos verdes" />
+            <p>Cocina renovada, clara y práctica.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="playas" class="beach-section">
+    <section id="azotea">
+      <div class="container two-col reverse">
+        <div class="reveal">
+          <p class="section-kicker">La Azotea</p>
+          <h2>Un pequeño refugio bajo el cielo de Conil</h2>
+          <p class="lead">La terraza privada es un lugar para desayunos lentos, tardes de sombra y noches largas de verano. No busca vistas espectaculares: ofrece algo más íntimo, una calma propia dentro del patio.</p>
+        </div>
+        <figure class="photo reveal">
+          <img src="assets/azotea-noche.jpg" alt="Terraza privada de Casa Carlota por la noche con luces cálidas" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="conil" class="quiet-band">
       <div class="container">
-        <div class="section-head-center">
-          <p class="section-kicker">Dunas & Playas</p>
-          <h2>Momentos junto al mar</h2>
+        <div class="center-text reveal">
+          <p class="section-kicker">Conil de la Frontera</p>
+          <h2>Vivir dentro de Conil</h2>
+          <p class="lead">Calles blancas, vecinos tranquilos, pequeñas tiendas y restaurantes a unos pasos. Casa Carlota es una casa vacacional en Conil de la Frontera para quienes quieren estar cerca de la playa sin renunciar al ritmo del casco histórico.</p>
         </div>
-
-        <div class="carousel" data-carousel data-interval="5600" aria-label="Dunas y playas de Conil">
-          <figure class="slide active">
-            <img src="assets/beach/01-duna-libro.jpeg" alt="Dunas y calma · Casa Carlota Conil" loading="eager">
-            <figcaption>Dunas y calma</figcaption>
-            
+        <div class="image-grid">
+          <figure class="photo wide reveal">
+            <img src="assets/calle-conil.jpg" alt="Calle blanca y tranquila cerca de Casa Carlota en Conil" />
           </figure>
-          <figure class="slide">
-            <img src="assets/beach/02-rio-salado.jpg" alt="Río Salado · Casa Carlota Conil" loading="lazy">
-            <figcaption>Río Salado</figcaption>
-            
+          <figure class="photo tall reveal">
+            <img src="assets/entrada-patio.jpg" alt="Entrada al patio tranquilo donde se encuentra Casa Carlota" />
           </figure>
-          <figure class="slide">
-            <img src="assets/beach/03-orilla.jpeg" alt="Luz atlántica · Casa Carlota Conil" loading="lazy">
-            <figcaption>Luz atlántica</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/04-cala-turquesa.jpeg" alt="Agua y roca · Casa Carlota Conil" loading="lazy">
-            <figcaption>Agua y roca</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/05-tumbonas.jpeg" alt="Días de playa · Casa Carlota Conil" loading="lazy">
-            <figcaption>Días de playa</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/06-momento-mar.jpeg" alt="Momentos lentos junto al mar · Casa Carlota Conil" loading="lazy">
-            <figcaption>Momentos lentos junto al mar</figcaption>
-            <div class="micro-caption">Momentos lentos junto al mar</div>
-          </figure>
-          <figure class="slide" data-hold="8500">
-            <img src="assets/beach/07-sunset-surfer.jpeg" alt="Atardecer atlántico · Casa Carlota Conil" loading="lazy">
-            <figcaption>Atardecer atlántico</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/08-sombrillas.jpeg" alt="Verano en Conil · Casa Carlota Conil" loading="lazy">
-            <figcaption>Verano en Conil</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/09-sol-mar.jpeg" alt="El sol sobre el mar · Casa Carlota Conil" loading="lazy">
-            <figcaption>El sol sobre el mar</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/10-surfer-finale.jpg" alt="Última luz · Casa Carlota Conil" loading="lazy">
-            <figcaption>Última luz</figcaption>
-            
-          </figure>
-          <figure class="slide">
-            <img src="assets/beach/11-finale.jpeg" alt="El Atlántico al caer la tarde · Casa Carlota Conil" loading="lazy">
-            <figcaption>El Atlántico al caer la tarde</figcaption>
-            
-          </figure>
-          <button class="carousel-arrow prev" type="button" aria-label="Imagen anterior">‹</button>
-          <button class="carousel-arrow next" type="button" aria-label="Imagen siguiente">›</button>
-        </div>
-        <div class="dots" aria-label="Seleccionar imagen">
-          <button class="dot active" type="button" aria-label="Ver imagen 1" data-slide="0"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 2" data-slide="1"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 3" data-slide="2"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 4" data-slide="3"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 5" data-slide="4"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 6" data-slide="5"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 7" data-slide="6"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 8" data-slide="7"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 9" data-slide="8"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 10" data-slide="9"></button>
-          <button class="dot" type="button" aria-label="Ver imagen 11" data-slide="10"></button>
-        </div>
-
-        <div class="copy-block">
-          <p>Zwischen Atlantik, Dünenlandschaften und endlosen Stränden zeigt sich die Costa de la Luz von ihrer schönsten Seite. Rund um Conil liegen stille Buchten, weite Sandstrände und Sonnenuntergänge, die jeden Tag anders wirken.</p>
-          <p>Casa Carlota verbindet das Leben im Dorf mit dem Meer direkt vor der Tür – ideal für Gäste, die Andalusien authentisch erleben möchten.</p>
         </div>
       </div>
     </section>
 
-    <section id="reservas" class="reservas">
-      <div class="container">
+    <section>
+      <div class="container two-col">
+        <figure class="photo reveal">
+          <img src="assets/dormitorio.jpg" alt="Dormitorio principal de Casa Carlota con cama doble" />
+        </figure>
+        <div class="reveal">
+          <p class="section-kicker">Dormir</p>
+          <h2>Espacios sencillos, pensados para descansar</h2>
+          <p class="lead">En la planta superior, dos dormitorios: uno con cama doble y otro con litera. La casa funciona especialmente bien para una pareja, o para una pareja con un niño, que buscan un alojamiento tranquilo cerca de la playa en Conil.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservas" class="reservas quiet-band">
+      <div class="container reveal">
         <p class="section-kicker">Reservas</p>
         <h2>Consultar disponibilidad</h2>
-        <a class="whatsapp" href="https://wa.me/34653526866" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
-        <p class="placeholder">Email: pendiente de añadir</p>
+        <p class="lead">Para estancias de verano, escríbenos con las fechas deseadas y el número de personas. Te responderemos de forma directa y personal.</p>
+        <div class="contact-links">
+          <a class="text-link" href="mailto:tuemail@ejemplo.com?subject=Consulta%20Casa%20Carlota">Email</a>
+          <a class="text-link" href="https://wa.me/34653526866">WhatsApp +34 653 526 866</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    Casa Carlota · Conil de la Frontera
+    <div class="container footer-inner">
+      <span>© 2026 Casa Carlota · Conil de la Frontera</span>
+      <span>WhatsApp +34 653 526 866 · Email pendiente</span>
+    </div>
   </footer>
 
   <script>
-    (function () {
-      const carousels = Array.from(document.querySelectorAll("[data-carousel]"));
-
-      carousels.forEach((carousel) => {
-        const slides = Array.from(carousel.querySelectorAll(".slide"));
-        const dotsWrap = carousel.nextElementSibling;
-        const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll(".dot")) : [];
-        const prev = carousel.querySelector(".prev");
-        const next = carousel.querySelector(".next");
-        const baseInterval = Number(carousel.dataset.interval || 5200);
-        let index = 0;
-        let timer;
-
-        function currentHold() {
-          const hold = slides[index] && slides[index].dataset.hold;
-          return hold ? Number(hold) : baseInterval;
-        }
-
-        function show(nextIndex) {
-          index = (nextIndex + slides.length) % slides.length;
-          slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
-          dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-        }
-
-        function start() {
-          stop();
-          timer = window.setTimeout(function tick() {
-            show(index + 1);
-            timer = window.setTimeout(tick, currentHold());
-          }, currentHold());
-        }
-
-        function stop() {
-          if (timer) window.clearTimeout(timer);
-        }
-
-        if (prev) prev.addEventListener("click", () => { show(index - 1); start(); });
-        if (next) next.addEventListener("click", () => { show(index + 1); start(); });
-        dots.forEach((dot) => {
-          dot.addEventListener("click", () => {
-            show(Number(dot.dataset.slide));
-            start();
-          });
-        });
-
-        let touchStartX = 0;
-        carousel.addEventListener("touchstart", (event) => {
-          touchStartX = event.changedTouches[0].screenX;
-        }, { passive: true });
-
-        carousel.addEventListener("touchend", (event) => {
-          const delta = event.changedTouches[0].screenX - touchStartX;
-          if (Math.abs(delta) > 42) {
-            show(index + (delta < 0 ? 1 : -1));
-            start();
-          }
-        }, { passive: true });
-
-        carousel.addEventListener("mouseenter", stop);
-        carousel.addEventListener("mouseleave", start);
-
-        start();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    })();
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
