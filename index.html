@@ -339,7 +339,7 @@
     .interior-slider-section {
       padding-top: clamp(82px, 9vw, 122px);
       padding-bottom: clamp(82px, 9vw, 122px);
-      background: var(--paper, #f4eee5);
+      background: var(--paper-soft, #fbf8f3);
     }
 
     .interior-slider-section h2 {
@@ -354,7 +354,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 24px;
-      background: #e7ded2;
+      background: #f3ede5;
       min-height: 640px;
       box-shadow: 0 18px 60px rgba(34, 47, 62, .08);
       margin-top: 42px;
@@ -365,9 +365,9 @@
       inset: 0;
       opacity: 0;
       margin: 0;
-      transition: opacity 1500ms ease;
+      transition: opacity 1300ms ease;
       pointer-events: none;
-      background: #e7ded2;
+      background: #f3ede5;
     }
 
     .interior-slide.active {
@@ -386,22 +386,12 @@
     }
 
     .interior-slide.hero-slide.active img {
-      animation: subtleInteriorZoom 8s ease-out both;
-    }
-
-    .interior-slide.night-slide {
-      background: #101010;
-    }
-
-    .interior-slide.night-slide img {
-      object-fit: contain;
-      object-position: center center;
-      background: #101010;
+      animation: subtleInteriorZoom 11s ease-out both;
     }
 
     @keyframes subtleInteriorZoom {
       from { transform: scale(1); }
-      to { transform: scale(1.018); }
+      to { transform: scale(1.025); }
     }
 
     .interior-slide figcaption {
@@ -486,6 +476,67 @@
       }
     }
 
+
+    /* Merge 02: Duna & Playas editorial gallery */
+    .beach-gallery-section .center-text {
+      margin-bottom: 54px;
+    }
+
+    .beach-editorial {
+      display: grid;
+      gap: 24px;
+    }
+
+    .beach-hero img {
+      aspect-ratio: 1.72 / 1;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 28px;
+      box-shadow: 0 18px 42px rgba(23, 52, 82, .08);
+    }
+
+    .beach-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .beach-duo img,
+    .beach-trio img {
+      aspect-ratio: 1 / 1.08;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 26px;
+      box-shadow: 0 14px 36px rgba(23, 52, 82, .07);
+    }
+
+    .beach-wide img {
+      aspect-ratio: 1.9 / .82;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 28px;
+      box-shadow: 0 18px 42px rgba(23, 52, 82, .08);
+    }
+
+    .beach-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 920px) {
+      .beach-duo,
+      .beach-trio {
+        grid-template-columns: 1fr;
+      }
+      .beach-hero img,
+      .beach-wide img,
+      .beach-duo img,
+      .beach-trio img {
+        aspect-ratio: 1.18 / 1;
+      }
+    }
+
 </style>
   <script type="application/ld+json">
   {
@@ -519,7 +570,7 @@ line-height:1.14!important;
     .interior-slider-section {
       padding-top: clamp(82px, 9vw, 122px);
       padding-bottom: clamp(82px, 9vw, 122px);
-      background: var(--paper, #f4eee5);
+      background: var(--paper-soft, #fbf8f3);
     }
 
     .interior-slider-section h2 {
@@ -534,7 +585,7 @@ line-height:1.14!important;
       position: relative;
       overflow: hidden;
       border-radius: 24px;
-      background: #e7ded2;
+      background: #f3ede5;
       min-height: 640px;
       box-shadow: 0 18px 60px rgba(34, 47, 62, .08);
       margin-top: 42px;
@@ -545,9 +596,9 @@ line-height:1.14!important;
       inset: 0;
       opacity: 0;
       margin: 0;
-      transition: opacity 1500ms ease;
+      transition: opacity 1300ms ease;
       pointer-events: none;
-      background: #e7ded2;
+      background: #f3ede5;
     }
 
     .interior-slide.active {
@@ -566,22 +617,12 @@ line-height:1.14!important;
     }
 
     .interior-slide.hero-slide.active img {
-      animation: subtleInteriorZoom 8s ease-out both;
-    }
-
-    .interior-slide.night-slide {
-      background: #101010;
-    }
-
-    .interior-slide.night-slide img {
-      object-fit: contain;
-      object-position: center center;
-      background: #101010;
+      animation: subtleInteriorZoom 11s ease-out both;
     }
 
     @keyframes subtleInteriorZoom {
       from { transform: scale(1); }
-      to { transform: scale(1.018); }
+      to { transform: scale(1.025); }
     }
 
     .interior-slide figcaption {
@@ -741,51 +782,51 @@ line-height:1.14!important;
         <h2>Interior de Casa Carlota</h2>
 
         <div class="interior-carousel" data-interior-carousel aria-label="Interior de Casa Carlota">
-                    <figure class="interior-slide hero-slide active" data-hold="8000">
+          <figure class="interior-slide active hero-slide" data-hold="6000">
             <img src="assets/interior/01-salon-cafe.png" alt="Salón con café · Casa Carlota Conil" loading="eager">
             <figcaption>Salón con café</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/02-azotea-dia.jpg" alt="Azotea privada · Casa Carlota Conil" loading="lazy">
-            <figcaption>Azotea privada</figcaption>
+            <img src="assets/interior/02-entrada-cocina.jpeg" alt="Entrada y cocina · Casa Carlota Conil" loading="lazy">
+            <figcaption>Entrada y cocina</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/03-terraza-vino-olivas.png" alt="Terraza al atardecer · Casa Carlota Conil" loading="lazy">
-            <figcaption>Terraza al atardecer</figcaption>
-          </figure>
-          <figure class="interior-slide">
-            <img src="assets/interior/04-plantas-terracota.jpeg" alt="Terracota y plantas · Casa Carlota Conil" loading="lazy">
-            <figcaption>Terracota y plantas</figcaption>
-          </figure>
-          <figure class="interior-slide">
-            <img src="assets/interior/05-patio-plantas.jpeg" alt="Patio con plantas · Casa Carlota Conil" loading="lazy">
-            <figcaption>Patio con plantas</figcaption>
-          </figure>
-          <figure class="interior-slide">
-            <img src="assets/interior/06-cocina.jpeg" alt="Cocina abierta · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/03-cocina.jpeg" alt="Cocina abierta · Casa Carlota Conil" loading="lazy">
             <figcaption>Cocina abierta</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/07-dormitorio-principal.png" alt="Dormitorio principal · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/04-dormitorio-principal.png" alt="Dormitorio principal · Casa Carlota Conil" loading="lazy">
             <figcaption>Dormitorio principal</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/08-bano.jpeg" alt="Baño renovado · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/05-bano.jpeg" alt="Baño renovado · Casa Carlota Conil" loading="lazy">
             <figcaption>Baño renovado</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/09-escalera.jpeg" alt="Escalera interior · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/06-escalera.jpeg" alt="Escalera interior · Casa Carlota Conil" loading="lazy">
             <figcaption>Escalera interior</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/10-dormitorio-litera.png" alt="Segundo dormitorio · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/07-dormitorio-litera.png" alt="Segundo dormitorio · Casa Carlota Conil" loading="lazy">
             <figcaption>Segundo dormitorio</figcaption>
           </figure>
           <figure class="interior-slide">
-            <img src="assets/interior/11-detalle-mar.jpeg" alt="Detalles junto al mar · Casa Carlota Conil" loading="lazy">
+            <img src="assets/interior/08-patio-entrada.jpeg" alt="Patio de entrada · Casa Carlota Conil" loading="lazy">
+            <figcaption>Patio de entrada</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/09-azotea-dia.jpg" alt="Azotea privada · Casa Carlota Conil" loading="lazy">
+            <figcaption>Azotea privada</figcaption>
+          </figure>
+          <figure class="interior-slide">
+            <img src="assets/interior/10-detalle-mar.jpeg" alt="Detalles junto al mar · Casa Carlota Conil" loading="lazy">
             <figcaption>Detalles junto al mar</figcaption>
           </figure>
-          <figure class="interior-slide night-slide">
+          <figure class="interior-slide">
+            <img src="assets/interior/11-luz-interior.jpeg" alt="Luz interior · Casa Carlota Conil" loading="lazy">
+            <figcaption>Luz interior</figcaption>
+          </figure>
+          <figure class="interior-slide">
             <img src="assets/interior/12-night-agave.jpeg" alt="Noches en Casa Carlota · Casa Carlota Conil" loading="lazy">
             <figcaption>Noches en Casa Carlota</figcaption>
           </figure>
@@ -794,7 +835,7 @@ line-height:1.14!important;
         </div>
 
         <div class="interior-dots" aria-label="Seleccionar imagen">
-                    <button class="interior-dot active" type="button" aria-label="Ver imagen 1" data-slide="0"></button>
+          <button class="interior-dot active" type="button" aria-label="Ver imagen 1" data-slide="0"></button>
           <button class="interior-dot" type="button" aria-label="Ver imagen 2" data-slide="1"></button>
           <button class="interior-dot" type="button" aria-label="Ver imagen 3" data-slide="2"></button>
           <button class="interior-dot" type="button" aria-label="Ver imagen 4" data-slide="3"></button>
@@ -814,31 +855,6 @@ line-height:1.14!important;
       </div>
     </section>
 
-
-    <section class="quiet-band">
-      <div class="container">
-        <div class="center-text reveal">
-          <p class="section-kicker">Luz · Materia · Calma</p>
-          <h2>Detalles que hacen casa</h2>
-          <p class="lead">Muros blancos, cerámica, sombra de olivo y pequeños gestos junto al mar. Una forma sencilla de estar en Conil.</p>
-        </div>
-        <div class="triptych">
-          <div class="detail-card reveal">
-            <img src="assets/sombra-olivo.jpg" alt="Sombra de olivo sobre un muro blanco de la terraza" />
-            <p>Sombras de mediodía.</p>
-          </div>
-          <div class="detail-card reveal">
-            <img src="assets/detalle-mar.jpg" alt="Detalle de conchas y una fotografía de vela en Casa Carlota" />
-            <p>Pequeños recuerdos del mar.</p>
-          </div>
-          <div class="detail-card reveal">
-            <img src="assets/cocina.jpg" alt="Cocina renovada de Casa Carlota con azulejos verdes" />
-            <p>Cocina renovada, clara y práctica.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="azotea">
       <div class="container two-col reverse">
         <div class="reveal">
@@ -852,36 +868,46 @@ line-height:1.14!important;
       </div>
     </section>
 
-    <section id="conil" class="quiet-band">
+    <section id="conil" class="quiet-band beach-gallery-section">
       <div class="container">
         <div class="center-text reveal">
-          <p class="section-kicker">Conil de la Frontera</p>
-          <h2>Vivir dentro de Conil</h2>
-          <p class="lead">Calles blancas, vecinos tranquilos, pequeñas tiendas y restaurantes a unos pasos. Casa Carlota es una casa vacacional en Conil de la Frontera para quienes quieren estar cerca de la playa sin renunciar al ritmo del casco histórico.</p>
+          <p class="section-kicker">DUNA · ATLÁNTICO · LUZ</p>
+          <h2>Entre duna y Atlántico</h2>
         </div>
-        <div class="image-grid">
-          <figure class="photo wide reveal">
-            <img src="assets/calle-conil.jpg" alt="Calle blanca y tranquila cerca de Casa Carlota en Conil" />
+
+        <div class="beach-editorial">
+          <figure class="beach-hero reveal">
+            <img src="assets/playas/01-duna-libro.jpeg" alt="Duna y playa atlántica cerca de Casa Carlota en Conil" />
           </figure>
-          <figure class="photo tall reveal">
-            <img src="assets/entrada-patio.jpg" alt="Entrada al patio tranquilo donde se encuentra Casa Carlota" />
+
+          <div class="beach-duo">
+            <figure class="reveal">
+              <img src="assets/playas/05-tumbonas.jpeg" alt="Tumbonas frente al Atlántico en la playa de Conil" />
+            </figure>
+            <figure class="reveal">
+              <img src="assets/playas/04-cala-turquesa.jpeg" alt="Cala de arena y agua turquesa en la costa de Conil" />
+            </figure>
+          </div>
+
+          <figure class="beach-wide reveal">
+            <img src="assets/playas/10-surfer-finale.jpg" alt="Atardecer atlántico con surfer en Conil" />
           </figure>
+
+          <div class="beach-trio">
+            <figure class="reveal">
+              <img src="assets/playas/02-rio-salado.jpg" alt="Río Salado y playa abierta en Conil de la Frontera" />
+            </figure>
+            <figure class="reveal">
+              <img src="assets/playas/06-momento-mar.jpeg" alt="Momento de playa junto al mar en Conil" />
+            </figure>
+            <figure class="reveal">
+              <img src="assets/playas/09-sol-mar.jpeg" alt="Sol sobre el Atlántico al atardecer" />
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container two-col">
-        <figure class="photo reveal">
-          <img src="assets/dormitorio.jpg" alt="Dormitorio principal de Casa Carlota con cama doble" />
-        </figure>
-        <div class="reveal">
-          <p class="section-kicker">Dormir</p>
-          <h2>Espacios sencillos, pensados para descansar</h2>
-          <p class="lead">En la planta superior, dos dormitorios: uno con cama doble y otro con litera. La casa funciona especialmente bien para una pareja, o para una pareja con un niño, que buscan un alojamiento tranquilo cerca de la playa en Conil.</p>
-        </div>
-      </div>
-    </section>
 
     <section id="reservas" class="reservas quiet-band">
       <div class="container reveal">
@@ -927,7 +953,7 @@ line-height:1.14!important;
       let index = 0;
       let timer = null;
       let hasStarted = false;
-      const defaultHold = 6000;
+      const defaultHold = 5600;
 
       function holdForCurrentSlide() {
         const hold = slides[index] && slides[index].dataset.hold;
@@ -967,8 +993,7 @@ line-height:1.14!important;
         }
         hasStarted = true;
         show(0);
-        stop();
-        timer = window.setTimeout(start, 1200);
+        start();
       }
 
       if (prev) prev.addEventListener("click", () => { show(index - 1); start(); });
