@@ -280,7 +280,38 @@
       align-items: stretch;
     }
     .image-grid .photo img { height: 100%; }
+#comodidades {
+  background: var(--paper-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
 
+.amenities-grid {
+  max-width: 760px;
+  margin: 50px auto 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 60px;
+}
+
+.amenities-grid div {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sand-soft);
+  color: var(--navy);
+  font-size: 0.98rem;
+  text-align: left;
+}
+
+.amenities-closing {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+    
     .reservas {
       text-align: center;
       padding-bottom: 86px;
@@ -958,7 +989,35 @@ line-height:1.14!important;
 </section>
 
     
-    <section id="reservas" class="reservas quiet-band">
+    <section id="comodidades">
+  <div class="container">
+
+    <div class="center-text reveal">
+      <p class="section-kicker">Comodidades</p>
+      <h2>Todo lo necesario para una estancia cómoda</h2>
+    </div>
+
+    <div class="amenities-grid reveal">
+      <div>Wifi rápido</div>
+      <div>TV</div>
+      <div>Aire acondicionado</div>
+      <div>Cocina totalmente equipada</div>
+      <div>Lavadora</div>
+      <div>Secador de pelo</div>
+      <div>Toallas y ropa de cama</div>
+      <div>Gel de ducha y champú</div>
+      <div>Plancha</div>
+    </div>
+
+    <p class="amenities-closing reveal">
+      Todo está preparado para una estancia sencilla, cómoda y sin preocupaciones.
+    </p>
+
+  </div>
+</section>
+
+    
+    <section id="reservas" class="reservas">
       <div class="container reveal">
         <p class="section-kicker">Reservas</p>
         <h2>Consultar disponibilidad</h2>
