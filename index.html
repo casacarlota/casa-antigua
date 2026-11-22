@@ -1132,14 +1132,15 @@ line-height:1.14!important;
       }
 
       function startFromFirstOnce() {
-        if (hasStarted) {
-          start();
-          return;
-        }
-        hasStarted = true;
-        show(0);
-        start();
-      }
+  if (hasStarted) {
+    start();
+    return;
+  }
+
+  hasStarted = true;
+  show(0);
+  start();
+}
 
       if (prev) prev.addEventListener("click", () => { show(index - 1); start(); });
       if (next) next.addEventListener("click", () => { show(index + 1); start(); });
